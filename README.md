@@ -1,0 +1,2 @@
+# python_practice
+记录一些python的小工程练习，希望能持之以恒的熟练使用python编程。今年的学习计划之一
