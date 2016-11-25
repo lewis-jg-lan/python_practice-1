@@ -63,12 +63,24 @@ def search(lines, pattern, histroy=5):
 if __name__ == '__main__':
 
     # /Users/allenliu/Desktop/rsync.txt
-    with open('/Users/allenliu/Desktop/TEST.txt') as f:
-        for line, previous_line in search(f, 'root'):
-            for pline in previous_line:
-                print('preLine is ', pline, end='')
-            print('the line is ', line, end='')
-            print('-' * 100)
+    try:
+        with open('/Users/allenliu/Desktop/TEST.txt') as f:
+            for line, previous_line in search(f, 'root'):
+                for pline in previous_line:
+                    print('preLine is ', pline, end='')
+                print('the line is ', line, end='')
+                print('-' * 100)
+    except FileNotFoundError:
+        with open('/Users/allen/Desktop/old/rsync.txt') as f:
+            for line, previous_line in search(f, 'root'):
+                for pline in previous_line:
+                    print('preLine is ', pline, end='')
+                print('the line is ', line, end='')
+                print('-' * 100)
+    finally:
+        print('end')
+
+
 # Q: 为何遍历的时候会是以行为元素,不是一个char 一个char?
 # deque 是一个队列元素,从两段插入队列或者弹出元素的复杂度都是O(1),而列表从头部插入或者移除元素的复杂度是O(N)
 
@@ -311,3 +323,7 @@ prices = {
 
 p1 = {key:value for key, value in prices.items() if value > 200}
 print(p1)
+
+
+
+
