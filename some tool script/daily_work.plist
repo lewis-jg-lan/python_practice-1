@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GitPath</key>
+	<string>/Users/allenliu/PycharmProjects/GUI_ForRegax</string>
+	<key>Station</key>
+	<dict>
+		<key>CG-INSTALL</key>
+		<dict>
+			<key>add</key>
+			<array>
+				<dict>
+					<key>before</key>
+					<string></string>
+					<key>item_name</key>
+					<string></string>
+					<key>spec</key>
+					<string></string>
+					<key>units</key>
+					<string></string>
+					<key>commands</key>
+					<array>
+						<string>xxxx</string>
+						<string>xxxx1</string>
+					</array>
+				</dict>
+				<dict>
+					<key>before</key>
+					<string></string>
+					<key>item_name</key>
+					<string></string>
+					<key>spec</key>
+					<string></string>
+					<key>units</key>
+					<string></string>
+					<key>commands</key>
+					<array>
+						<string>items1</string>
+						<string>xxxx1</string>
+					</array>
+				</dict>
+			</array>
+			<key>delete</key>
+			<array>
+				<string>item_name</string>
+			</array>
+			<key>modify</key>
+			<array>
+				<dict>
+					<key>item_name</key>
+					<string></string>
+					<key>new_spec</key>
+					<string></string>
+					<key>new_unit</key>
+					<string></string>
+					<key>new_commands</key>
+					<array>
+						<string>xxxx</string>
+						<string>xxxx1</string>
+					</array>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

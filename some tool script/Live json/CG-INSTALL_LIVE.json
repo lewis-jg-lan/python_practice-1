@@ -1,0 +1,1579 @@
+{
+  "hash" : "136720E72F795817F645E2D3F53C63123E0674BA",
+  "data" : {
+    "product" : "D20",
+    "build" : "Proto2",
+    "Versions" : "2",
+    "tests" : [
+      {
+        "Name": {
+          "main": "ECID"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "chipid"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Board_ID"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "boardid"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name" : {
+          "main" : "Read_MLB_SN"
+        },
+        "Specification" : {
+          "match" : [
+            "*"
+          ]
+        },
+        "Commands" : [
+          "syscfg print MLB#"
+        ],
+        "FunctionNames" : [
+          "*"
+        ]
+      },
+      {
+        "Name" : {
+          "main" : "Write_GMT_Date_and_Time"
+        },
+        "Specification" : {
+          "match" : [
+            "*"
+          ]
+        },
+        "Commands" : [
+          "rtc --set"
+        ],
+        "FunctionNames" : [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "PREVIOUS_FG_SN"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "sn"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Burn_SN"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "syscfg add SrNm",
+          "sn"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Diag_Version"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "ver"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Write_CB_Incomplete"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "CG_Pattern_Test"
+        },
+        "Specification": {
+          "match": [
+            "Yes"
+          ]
+        },
+        "Commands": [
+          "display --off",
+          "display --on",
+          "pattern --fill 0xFFFFFF",
+          "bl -h"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "CG_Vendor"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "mipi --write 0x23 0xb2 0x00",
+          "mipi --read 0x24 0xB1"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Upload_Orb_Flex_SN"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "i2c -z 2 --devread 3 0x51 0x1200 0x16"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Read_LCM_SN_from_diags"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "i2c -z 2 --devread 3 0x51 0x0 0x39"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Check_CG_Color_and_HSG_Color"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Pre_Link_CG_SN"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Link_CG_SN"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "I2C_Isolator_Enable"
+        },
+        "Specification": {
+          "match": [
+            "OK"
+          ]
+        },
+        "Commands": [
+          "socgpio --port 1 --pin 20 --output 1"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Turtle_Value_Reading"
+        },
+        "Specification": {
+          "min": "37000",
+          "max": "65500",
+          "units": ""
+        },
+        "Commands": [
+          "touch --sel mesa --on",
+          "socgpio --port 1 --pin 11 --drive 6",
+          "socgpio --port 1 --pin 12 --drive 6",
+          "sensor --sel turtle --init",
+          "sensor --sel turtle --sample 1"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "X582_Serial_Number"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "touch --sel mesa",
+          "touch --on",
+          "touch -p"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "X582_Powered_Status"
+        },
+        "Specification": {
+          "match": [
+            "yes"
+          ]
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "X582_Provisioning_Status"
+        },
+        "Specification": {
+          "min": "N/A",
+          "max": "N/A",
+          "units": ""
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Load_X582_Firmware"
+        },
+        "Specification": {
+          "match": [
+            "OK"
+          ]
+        },
+        "Commands": [
+          "touch --load_firmware"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "X582_Module_SN_From_diag"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "touch -p module-sn"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "AOP_GPIO_MESA_TO_AOP_FDINT_Init"
+        },
+        "Specification": {
+          "match": [
+            "0"
+          ]
+        },
+        "Commands": [
+          "socgpio --port 1 --pin 21 --input",
+          "spi -s --transfer 3 14 0x80 0xC0 0x00 0x0E 0x00 0x00 0x00 0x7D 0x04 0x00 0x00 0x00 0x7F 0x80",
+          "time socgpio --port 1 --pin 21 --get"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "AOP_GPIO_MESA_TO_AOP_FDINT_High"
+        },
+        "Specification": {
+          "match": [
+            "1"
+          ]
+        },
+        "Commands": [
+          "spi -s --transfer 3 14 0x80 0xC0 0x00 0x0E 0x00 0x00 0x00 0x7D 0x04 0x00 0xd7 0x01 0xfe 0x01",
+          "socgpio --port 1 --pin 21 --get"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "AOP_GPIO_MESA_TO_AOP_FDINT_Low"
+        },
+        "Specification": {
+          "match": [
+            "0"
+          ]
+        },
+        "Commands": [
+          "spi -s --transfer 3 14 0x80 0xC0 0x00 0x0E 0x00 0x00 0x00 0x7D 0x04 0x00 0xd7 0x01 0xfe 0x00",
+          "socgpio --port 1 --pin 21 --get"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "AOP_TO_MESA_MENU_CONN_GPIO"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "socgpio --port 1 --pin 36 --output 0",
+          "touch --test menu_button_state --run",
+          "socgpio --port 1 --pin 36 --output 1",
+          "touch --test menu_button_state --run",
+          "socgpio --port 1 --pin 36 --output 0",
+          "touch --test menu_button_state --run"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "MESA_I2C_READ_THROUGH_AOP"
+        },
+        "Specification": {
+          "match": [
+            "0x49"
+          ]
+        },
+        "Commands": [
+          "i2c -d 5 0x61 0x00 0x01",
+          "wait 100",
+          "socgpio --port 1 --pin 20 --output 0"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "MIC1_Temp_Sensor_Exist_Check"
+        },
+        "Specification": {
+          "match": [
+            "Yes"
+          ]
+        },
+        "Commands": [
+          "audio --reset",
+          "routeaudio -b codec -i ain1 -o asp3[0] -r",
+          "i2c -d 1 0x54 0x00 1",
+          "i2c -d 1 0x54 0x01 1",
+          "temperature --dev mic"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "MIC1_dock_vendor_id1"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "MIC1_dock_vendor_id2"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "MIC1_Vendor_Check"
+        },
+        "Specification": {
+          "match": [
+            "AAC",
+            "GTK",
+            "Knowles"
+          ]
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "MIC1_Temperature"
+        },
+        "Specification": {
+          "min": "10",
+          "max": "50",
+          "units": ""
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "MIC2_Temp_Sensor_Exist_Check"
+        },
+        "Specification": {
+          "match": [
+            "Yes"
+          ]
+        },
+        "Commands": [
+          "audio --reset",
+          "routeaudio -b codec -i ain2 -o asp3[0] -r",
+          "i2c -d 1 0x56 0x00 1",
+          "i2c -d 1 0x56 0x01 1",
+          "temperature --dev mic"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "MIC2_rear_vendor_id1"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "MIC2_rear_vendor_id2"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "MIC2_Vendor_Check"
+        },
+        "Specification": {
+          "match": [
+            "AAC",
+            "GTK",
+            "Knowles"
+          ]
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "MIC2_Temperature"
+        },
+        "Specification": {
+          "min": "10",
+          "max": "50",
+          "units": ""
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Convoy_Device_ID_Check"
+        },
+        "Specification": {
+          "match": [
+            "0xCD"
+          ]
+        },
+        "Commands": [
+          "i2c -d 2 0x21 0x01 1"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Convoy_ExtCapacitance"
+        },
+        "Specification": {
+          "min": "0.5",
+          "max": "2",
+          "units": "pF"
+        },
+        "Commands": [
+          "smokey --run ConvoyTest --test PowerOn",
+          "smokey --run ConvoyTest --test GetExtCapacitance;cbcolor"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Convoy_IntCapacitance"
+        },
+        "Specification": {
+          "min": "5",
+          "max": "6",
+          "units": "pF"
+        },
+        "Commands": [
+          "smokey --run ConvoyTest --test GetIntCapacitance"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Convoy_EXT_Capacitance_check_current"
+        },
+        "Specification": {
+          "min": "2",
+          "max": "15",
+          "units": "mA"
+        },
+        "Commands": [
+          "pmuadc --read ildo3"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Muon_Fault_Register"
+        },
+        "Specification": {
+          "match": [
+            "0x00"
+          ]
+        },
+        "Commands": [
+          "bl -h",
+          "i2c -d 3 0x62 0x17 1",
+          "bl -m"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Bank_A"
+        },
+        "Specification": {
+          "min": "N/A",
+          "max": "4",
+          "units": ""
+        },
+        "Commands": [
+          "mipi -w 0x29 0xb2 \"0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00\"",
+          "mipi -r 0x24 0xbb"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Bank_B"
+        },
+        "Specification": {
+          "min": "N/A",
+          "max": "7",
+          "units": ""
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Flick_Val"
+        },
+        "Specification": {
+          "min": "0",
+          "max": "254",
+          "units": ""
+        },
+        "Commands": [
+          "i2c -z 2 --devread 3 0x51 0x3ff3 0x01"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "VSFOM_Val"
+        },
+        "Specification": {
+          "min": "0",
+          "max": "254",
+          "units": ""
+        },
+        "Commands": [
+          "i2c -z 2 --devread 3 0x51 0x3ff5 0x01"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "FOS_Val"
+        },
+        "Specification": {
+          "min": "0",
+          "max": "254",
+          "units": ""
+        },
+        "Commands": [
+          "i2c -z 2 --devread 3 0x51 0x3ff7 0x01"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Flick_Count"
+        },
+        "Specification": {
+          "match": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "255"
+          ]
+        },
+        "Commands": [
+          "i2c -z 2 --devread 3 0x51 0x3ff4 0x01"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "VSFOM_Count"
+        },
+        "Specification": {
+          "match": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "255"
+          ]
+        },
+        "Commands": [
+          "i2c -z 2 --devread 3 0x51 0x3ff6 0x01"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "FOS_Count"
+        },
+        "Specification": {
+          "match": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "255"
+          ]
+        },
+        "Commands": [
+          "i2c -z 2 --devread 3 0x51 0x3ff8 0x01"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "RGBW_1"
+        },
+        "Specification": {
+          "match": [
+            "00020000"
+          ]
+        },
+        "Commands": [
+          "i2c -z 2 --devread 3 0x51 0x15B 0x4"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "RGBW_2"
+        },
+        "Specification": {
+          "match": [
+            "00010000"
+          ]
+        },
+        "Commands": [
+          "i2c -z 2 --devread 3 0x51 0x122 0x4"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Load_Grape_Firmware"
+        },
+        "Specification": {
+          "match": [
+            "OK"
+          ]
+        },
+        "Commands": [
+          "touch --sel grape",
+          "touch --off",
+          "touch --on",
+          "touch --load"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Orb_Value_Check"
+        },
+        "Specification": {
+          "match": [
+            "0x81B0"
+          ]
+        },
+        "Commands": [
+          "touch --sel grape",
+          "touch --on",
+          "touch --load",
+          "touch --test orb --run"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Read_Panel_ID"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "display --on",
+          "display --id"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Read_Photon_ID"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "display --method photon_id"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "ALS_ID_check"
+        },
+        "Specification": {
+          "match": [
+            "0x8F"
+          ]
+        },
+        "Commands": [
+          "sensor --sel als --init",
+          "sensor --sel als --get chip_id"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "BOTSPK_VERS"
+        },
+        "Specification": {
+          "match": [
+            "0x26"
+          ]
+        },
+        "Commands": [
+          "processaudio --freebufs all",
+          "audio --reset",
+          "audio --turnoff topspeaker",
+          "audio --turnoff arc",
+          "i2c -d 5 0x40 0x02 2"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "BotSpeaker_Impedance_Voltage"
+        },
+        "Specification": {
+          "min": "N/A",
+          "max": "N/A",
+          "units": "V"
+        },
+        "Commands": [
+          "i2c -v 3 0x08 0x02 0x09",
+          "audioparam -b codec -p asp1 -n bit_depth -v 24 -s",
+          "routeaudio --route --block botspeaker --in spk-i2s --out spk-out",
+          "setvol -b botspeaker -n spk-vol -v -22",
+          "audioparam --set --block botspeaker --param amp-gain --value 16",
+          "audioparam --set --block botspeaker --param enable-mon --value true",
+          "audioparam --set --block botspeaker --param boost-control --value 9000",
+          "routeaudio -b codec -i asp1[0] -o asp1[5] -r",
+          "audioreg -b codec -w -a 0x410014 -d 0x04",
+          "audioreg -b codec -w -a 0x320005 -d 0x1e",
+          "audioreg -b codec -w -a 0x41000f -d 0x0e",
+          "audioreg -b codec -w -a 0x44000a -d 0x0e",
+          "i2c -v 5 0x40 0x31 0x14",
+          "i2c -v 5 0x40 0x5c 0x00",
+          "i2c -v 5 0x40 0x5d 0xff",
+          "i2c -v 5 0x40 0x5e 0x4f",
+          "i2c -v 5 0x40 0x07 0x38",
+          "processaudio --freebufs all",
+          "loopaudio --block socmca --txport ap-mca5 --rxport ap-mca5 -d 24 --rate 48000 --channels 5 -l 100 --freq 40",
+          "processaudio --p fft -i looprx0 -o \"--minHz 30 --maxHz 50 --windowType no_window --normalize true\"",
+          "processaudio -p crop -i looprx0 --options \"--start 100\"",
+          "processaudio -p CS35L25 -i process0 --options \"--stats\""
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "BotSpeaker_Impedance_Current"
+        },
+        "Specification": {
+          "min": "N/A",
+          "max": "N/A",
+          "units": ""
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "BotSpeaker_Impedance_RDC"
+        },
+        "Specification": {
+          "min": "6.8",
+          "max": "8.2",
+          "units": ""
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Find_Camera_Front"
+        },
+        "Specification": {
+          "match": [
+            "front  detected"
+          ]
+        },
+        "Commands": [
+          "camisp --find"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Pick_Camera_Front"
+        },
+        "Specification": {
+          "match": [
+            "Pass"
+          ]
+        },
+        "Commands": [
+          "camisp --pick front"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Camera_Front_ID"
+        },
+        "Specification": {
+          "match": [
+            "Pass"
+          ]
+        },
+        "Commands": [
+          "camisp --on",
+          "camisp --id"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Camera_Front_Stream"
+        },
+        "Specification": {
+          "match": [
+            "Pass"
+          ]
+        },
+        "Commands": [
+          "camisp --stream on"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Front_Camera_SN"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "camisp --exit",
+          "camisp --pick front",
+          "camisp --cameraconfig"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Back_Camera_SN"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "camisp --exit",
+          "camisp --pick back",
+          "camisp --cameraconfig"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "RCAM_BlackLevelOffset_Value"
+        },
+        "Specification": {
+          "min": "-1",
+          "max": "1",
+          "units": ""
+        },
+        "Commands": [
+          "camisp --on",
+          "camisp --stream on",
+          "wait 200",
+          "camisp --i2cread 0 0x10 0x0400 2 2",
+          "camisp --exit"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Compare_ARC_Module_SN_With_SFC"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "i2c -z 2 -d 3 0x50 0x0 32"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Load_Touch_Firmware"
+        },
+        "Specification": {
+          "match": [
+            "OK"
+          ]
+        },
+        "Commands": [
+          "touch --sel grape",
+          "touch --off",
+          "touch --on",
+          "touch --load_firmware"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Compare_Battery_SN_With_SFC"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "device -k GasGauge -e read_pack_sn"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Lifetime_Max_Temperature"
+        },
+        "Specification": {
+          "min": "0",
+          "max": "60",
+          "units": ""
+        },
+        "Commands": [
+          "dev -k GasGauge -e read_blk 59 0"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Battery_Voltage"
+        },
+        "Specification": {
+          "min": "3400",
+          "max": "4350",
+          "units": "mV"
+        },
+        "Commands": [
+          "dev -k GasGauge -p"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Battery_Current"
+        },
+        "Specification": {
+          "min": "N/A",
+          "max": "N/A",
+          "units": "mA"
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Battery_Average_Power"
+        },
+        "Specification": {
+          "min": "N/A",
+          "max": "N/A",
+          "units": "mW"
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Battery_Charge_Percentage"
+        },
+        "Specification": {
+          "min": "N/A",
+          "max": "N/A",
+          "units": "%"
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Battery_Remaining_Capacity"
+        },
+        "Specification": {
+          "min": "N/A",
+          "max": "N/A",
+          "units": "mAh"
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "TOPSPK_VERS"
+        },
+        "Specification": {
+          "match": [
+            "0x26"
+          ]
+        },
+        "Commands": [
+          "processaudio --freebufs all",
+          "audio --reset",
+          "audio --turnoff botspeaker",
+          "audio --turnoff arc",
+          "i2c -d 2 0x40 0x02 2"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "3K_Tone_TopSpeaker_to_MIC3_Frequency(L)"
+        },
+        "Specification": {
+          "min": "2998",
+          "max": "3002",
+          "units": ""
+        },
+        "Commands": [
+          "i2c -v 3 0x08 0x02 0x09",
+          "audioparam -b codec -p asp1 -n bit_depth -v 24 -s",
+          "audioparam -b codec -p asp2 -n bit_depth -v 24 -s",
+          "audioparam -b codec -p asp3 -n bit_depth -v 24 -s",
+          "routeaudio --route --block codec --in asp3[0] --out pdmout1[0]",
+          "routeaudio --route --block codec --in ain3 --out asp2[1:0]",
+          "audioreg -b codec -w -a 0x410014 -d 0x04",
+          "audioreg -b codec -w -a 0x420014 -d 0x04",
+          "audioreg -b codec -w -a 0x430014 -d 0x04",
+          "audioreg -b codec -w -a 0x32000a -d 0x06",
+          "audioreg -b codec -w -a 0x32000b -d 0x06",
+          "routeaudio --route --block topspeaker --in spk-pdm --out spk-out",
+          "audioparam --set --block topspeaker --param enable-mon --value true",
+          "setvol -b codec -n mixerA-input1 -v -6",
+          "audioreg -b codec -w -a 0x32002a -d 0x32",
+          "audioreg -b codec -w -a 0x320047 -d 0x58",
+          "audioreg -b codec -w -a 0x010004 -d 0x2f",
+          "audioreg -b codec -w -a 0x300000 -d 0xda",
+          "audioreg -b codec -w -a 0x300001 -d 0x3f",
+          "audioreg -b codec -w -a 0x300002 -d 0x3f",
+          "audioreg -b codec -w -a 0x300003 -d 0x3f",
+          "i2c -v 2 0x40 0x17 0x0F",
+          "i2c -v 2 0x40 0x08 0x00",
+          "i2c -v 2 0x40 0x5c 0x00",
+          "i2c -v 2 0x40 0x5d 0xff",
+          "i2c -v 2 0x40 0x5e 0x4f",
+          "i2c -v 2 0x40 0x06 0x00 0x38",
+          "i2c -v 2 0x40 0x1d 0x30",
+          "loopaudio -b socmca -p ap-mca4 -x ap-mca0 -d 24 --rate 48000 --channels 2 -l 400 --freq 3000",
+          "processaudio -p fft -i looprx0"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "3K_Tone_TopSpeaker_to_MIC3_Max_Power(L)"
+        },
+        "Specification": {
+          "min": "N/A",
+          "max": "N/A",
+          "units": ""
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "3K_Tone_TopSpeaker_to_MIC3_Frequency(R)"
+        },
+        "Specification": {
+          "min": "2998",
+          "max": "3002",
+          "units": ""
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "3K_Tone_TopSpeaker_to_MIC3_Max_Power(R)"
+        },
+        "Specification": {
+          "min": "N/A",
+          "max": "N/A",
+          "units": ""
+        },
+        "Commands": [
+          "*"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "I2C_Isolator_Disable"
+        },
+        "Specification": {
+          "match": [
+            "OK"
+          ]
+        },
+        "Commands": [
+          "socgpio --port 1 --pin 20 --output 0"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Prox_Connect_Test"
+        },
+        "Specification": {
+          "match": [
+            "passed"
+          ]
+        },
+        "Commands": [
+          "sensor --sel prox --init",
+          "sensor --sel prox --conntest"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Delete_PSCl"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "syscfg print PSCl",
+          "syscfg delete PSCl",
+          "syscfg print PSCl"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Delete_TCal"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "syscfg print TCal",
+          "syscfg delete TCal",
+          "syscfg print TCal"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "Write_CG_Install_CB"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "rtc --set"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "CG_Install_CB_Check"
+        },
+        "Specification": {
+          "match": [
+            "*"
+          ]
+        },
+        "Commands": [
+          "cbread 0x7b"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      },
+      {
+        "Name": {
+          "main": "UNIT_SHUTDOWN"
+        },
+        "Specification": {
+          "match": [
+            "Power Off"
+          ]
+        },
+        "Commands": [
+          "device -k GasGauge -e disconnect_bat"
+        ],
+        "FunctionNames": [
+          "*"
+        ]
+      }
+    ]
+  }
+}
