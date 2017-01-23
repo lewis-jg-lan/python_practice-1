@@ -1,0 +1,52 @@
+class raw_data(path)
+	do threads:
+		parse path_plist
+		generate plist_Items, json_Items, Item_index
+		self.plist_data = {stationname : plist_Items}
+		self.json_data = {stationname : json_Item}
+		self.Index = {stationname_plist: index, stationname_json : index}
+	
+
+def do dailywork
+# operation can be wrtien a wrapper later
+
+ for x in dialyworkplist:
+	 get station
+	 raw_data = raw_data(path)
+	 get station operations
+	 for y in operations:
+		 if y == add:
+			 get add_basic_info
+			 data = raw_data.get_latestStationData(station)
+			 add(add_basic_info, data, station)
+		 if y == delete:
+			 get delete_basic_info
+			 data = raw_data.get_latestStationData(station)
+			 delete(delete_basic_info, data, station)
+		 if y == modify:
+			 get modify_basic_info
+			 data = raw_data.get_latestStationData(station)
+			 modify(modify_basic_info, data, station)
+		 dump(json)
+		 dump(plist)
+		 over_write(plist and json)
+
+def add(basic_info, raw_data, station)
+	insert_plist_index = raw_data.index[station_plist][basic_info[before_item]]
+	insert_plist_data = {[
+							send_read_command(command),
+							....
+							catch_value(regax, key),
+							judge_spec(item_name)
+						]}
+						
+	raw_data.plist_data.insert(inser_plist_data)
+	insert_json_index = raw_data.index[station_json][basic_info[before_item]]	
+	 insert_json_data = generate_json_data(name, spec, unit, *commands) 
+	
+	update_plist_raw_data
+	update_json_raw_data
+
+
+	
+								
