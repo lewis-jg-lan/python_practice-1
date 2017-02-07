@@ -2,63 +2,114 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Basic_Item_Structure</key>
+	<dict>
+		<key>Command</key>
+		<array>
+			<dict>
+				<key>SEND_COMMAND:</key>
+				<dict>
+					<key>STRING</key>
+					<string>[*Command*]</string>
+					<key>TARGET</key>
+					<string>[*TARGET*]</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>READ_COMMAND:RETURN_VALUE:</key>
+				<dict>
+					<key>BEGIN</key>
+					<string></string>
+					<key>DELETE_ENTER</key>
+					<false/>
+					<key>END</key>
+					<string>[*TARGET*]</string>
+					<key>END_SYMBOL</key>
+					<array>
+						<string>[*TARGET*]</string>
+					</array>
+					<key>FAIL_RECEIVE</key>
+					<array>
+						<string>ERROR</string>
+						<string>FAIL</string>
+					</array>
+					<key>MATCHTYPE</key>
+					<integer>0</integer>
+					<key>TARGET</key>
+					<string>[*TARGET*]</string>
+					<key>TIMEOUT</key>
+					<integer>60</integer>
+				</dict>
+			</dict>
+		</array>
+		<key>Catch</key>
+		<array>
+			<dict>
+				<key>CATCH_VALUE:RETURN_VALUE:</key>
+				<dict>
+					<key>REGEX</key>
+					<string>[*regax*]</string>
+				</dict>
+			</dict>
+		</array>
+		<key>Judge</key>
+		<array>
+			<dict>
+				<key>JUDGE_SPEC:RETURN_VALUE:</key>
+				<dict>
+					<key>COMMON_SPEC</key>
+					<dict>
+						<key>P_LimitBlack</key>
+						<string>[*spec*]</string>
+					</dict>
+				</dict>
+			</dict>
+		</array>
+	</dict>
 	<key>GitPath</key>
-	<string>/Users/allenliu/PycharmProjects/GUI_ForRegax</string>
-	<key>Station</key>
+	<string>/Users/allenliu/Code_Git/python_practice/some tool script</string>
+	<key>Stations</key>
 	<dict>
 		<key>CG-INSTALL</key>
 		<dict>
 			<key>add</key>
 			<array>
 				<dict>
-					<key>before</key>
-					<string></string>
-					<key>item_name</key>
-					<string></string>
-					<key>spec</key>
-					<string></string>
-					<key>units</key>
-					<string></string>
-					<key>commands</key>
+					<key>Commands</key>
 					<array>
-						<string>xxxx</string>
-						<string>xxxx1</string>
+						<string>Test_Command1</string>
+						<string>Test_Command2</string>
+						<string>Test_Command3</string>
 					</array>
-				</dict>
-				<dict>
 					<key>before</key>
-					<string></string>
+					<string>Burn_SN</string>
 					<key>item_name</key>
-					<string></string>
+					<string>TEST_ITEM</string>
 					<key>spec</key>
-					<string></string>
+					<string>[5,20]</string>
 					<key>units</key>
-					<string></string>
-					<key>commands</key>
-					<array>
-						<string>items1</string>
-						<string>xxxx1</string>
-					</array>
+					<string>C</string>
 				</dict>
 			</array>
 			<key>delete</key>
 			<array>
-				<string>item_name</string>
+				<string>Read_LCM_SN_from_diags</string>
+				<string>CG_Pattern_Test</string>
 			</array>
 			<key>modify</key>
 			<array>
 				<dict>
 					<key>item_name</key>
 					<string></string>
-					<key>new_spec</key>
-					<string></string>
-					<key>new_unit</key>
-					<string></string>
-					<key>new_commands</key>
+					<key>new_command_sequence</key>
 					<array>
 						<string>xxxx</string>
 						<string>xxxx1</string>
 					</array>
+					<key>new_spec</key>
+					<string></string>
+					<key>new_unit</key>
+					<string></string>
 				</dict>
 			</array>
 		</dict>
