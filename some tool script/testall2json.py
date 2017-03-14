@@ -18,7 +18,7 @@ class testall_Item_Structure(object):
 			for each_command in commands:
 				for x in self.command:
 
-# parse the plist raw_data
+
 class raw_data(object):
 	def __init__(self, path):
 		self.stationsPlstRawData = {}
